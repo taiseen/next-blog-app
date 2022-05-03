@@ -43,7 +43,7 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 | 7| Data fetching from `GraphQL`                              | 
 | 8| `GraphQL Query` writing pattern                           | 
 | 9| `GraphQL Query` with function (parameter) writing pattern | 
-|10| TailwindCSS class applying - based on if/else condition   | 
+|10| TailwindCSS class applying - based on `if/else` condition | 
 |10| get`Static`Paths() ==> `SSG` ( statically `pre-render all the paths` )     | 
 |10| get`Static`Props() ==> `SSG` ( `pre-render` fetching data at `build time` )| 
 |10| get`ServerSide`Props() ==> `SSR` ( fetching data at `each user request` )  |
