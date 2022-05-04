@@ -284,19 +284,23 @@ export const getFeaturedPosts = async () => {
 
 
 
+// 000) ✅ creat POST function for ==> Submit Comment
+// this function call from 🟨../components/CommentsForm.js🟨 <Component />
 export const submitComment = async (obj) => {
+
+  // backEnd api endpoint...
   const result = await fetch('/api/comments', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(obj),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(obj)
   });
 
   return result.json();
 };
 
+
 export const getComments = async (slug) => {
+
   const query = gql`
     query GetComments($slug:String!) {
       comments(where: {post: {slug:$slug}}){
@@ -311,4 +315,3 @@ export const getComments = async (slug) => {
 
   return result.comments;
 };
-

@@ -2,6 +2,7 @@ import { graphCMSImageLoader } from '../services/utils';
 import Image from 'next/image';
 
 
+// this component call from 🟨 ../pages/post/[slug].js 🟨 <Component />
 const Author = ({ author }) => {
 
   const { name, bio, photo } = author;

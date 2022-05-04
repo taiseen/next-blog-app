@@ -12,10 +12,7 @@ const Header = () => {
     // & store this data into useState local [array] variable
     // for populate data into this <Component /> at JSX (ui)
     useEffect(() => {
-        getCategories().
-            then(newCategories => {
-                setCategories(newCategories);
-            });
+        getCategories().then(newCategories => setCategories(newCategories));
     }, []);
 
 

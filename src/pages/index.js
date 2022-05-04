@@ -43,6 +43,7 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
 
   // get data from server |OR| default value ==> [empty array]
+  // get data from this EndPoint... 🟨 at ../service/index.js 🟨 File
   const posts = (await getPosts()) || [];
   
   return {

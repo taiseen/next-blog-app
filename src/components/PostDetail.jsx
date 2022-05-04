@@ -1,11 +1,13 @@
 import React from 'react';
 import moment from 'moment';
 
+
+// this component call from 🟨 ../pages/post/[slug].js 🟨 <Component />
 const PostDetail = ({ post }) => {
 
     const { author, title, featuredImage, createdAt } = post;
 
-
+    // for styling ==> bold, italic, underline...
     const getContentFragment = (index, text, obj, type) => {
 
         let modifiedText = text;
@@ -51,6 +53,10 @@ const PostDetail = ({ post }) => {
                 return modifiedText;
         }
     };
+
+
+
+
 
     return (
         <>

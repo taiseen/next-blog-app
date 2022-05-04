@@ -12,7 +12,7 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 | 1| `category`   | 1. name <br/> 2. slug                     |
 | 2| `comment`    | 1. name <br/> 2. email <br/> 3. comment   |
 | 3| `author`     | 1. name <br/> 2. bio <br/> 3. photo       |
-| 4| `post`       | 1. title <br/> 2. slug <br/> 3. excerpt <br/> 4. content <br/> 5. featured post <br/> 6. featured image <br/> 7. author - `OneToMany` <br/> 8. categories - `ManyToMany` |
+| 4| `post`       | 1. title <br/> 2. slug <br/> 3. excerpt <br/> 4. content <br/> 5. featured post <br/> 6. featured image <br/> 7. author - `OneToMany` <br/> 8. category - `ManyToMany` <br/> 9. comment - `ManyToOne` |
 
 
 <br/>
@@ -50,3 +50,14 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 
 
 Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)
+
+
+```jsx
+// jsconfig.json File
+
+{
+    "compilerOptions": {
+        "baseUrl": "src"
+    }
+}
+```

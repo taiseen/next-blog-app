@@ -2,7 +2,7 @@ import { AdjacentPostCard } from '../components';
 import { getAdjacentPosts } from '../services';
 import { useState, useEffect } from 'react';
 
-
+// this component call from 🟨 ../pages/post/[slug],js 🟨 <Component />
 const AdjacentPosts = ({ createdAt, slug }) => {
 
     const [dataLoaded, setDataLoaded] = useState(false);

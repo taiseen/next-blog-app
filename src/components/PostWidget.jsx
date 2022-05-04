@@ -18,16 +18,11 @@ const PostWidget = ({ categories, slug }) => {
     if (slug) {
       // for already Opening post, to display | related other posts...
       // is it a similar post??? know it by "category"
-      getSimilarPosts(slug, categories)
-        .then(posts => {
-          setRelatedPosts(posts);
-        });
+      getSimilarPosts(slug, categories).then(posts => setRelatedPosts(posts));
     } else {
       // we are on the Home page... so...
       // for Home page display | recent posts...
-      getRecentPosts().then(posts => {
-        setRelatedPosts(posts);
-      });
+      getRecentPosts().then(posts => setRelatedPosts(posts));
     }
   }, [slug]);
   // when "slug" change re-run this <Component /> again

@@ -10,6 +10,7 @@ import Head from 'next/head'
 
 // data fetch/come from ==> getStaticProps({ params })
 // & pass into this <Component/> as a props ==> { post }
+// this <Component/> call by 🟨 Browser URL /post/PARAMETER... 🟨 
 const PostDetails = ({ post }) => {
 
     const router = useRouter();
@@ -66,7 +67,7 @@ export default PostDetails;
 // slug ==> is a unique URL for a specific resource...
 export async function getStaticProps({ params }) {
 
-    // get data from this EndPoint... [ at ../service/index.js File ]
+    // get data from this EndPoint... 🟨 at ../service/index.js 🟨 File
     const data = await getPostDetails(params.slug);
 
     return {
