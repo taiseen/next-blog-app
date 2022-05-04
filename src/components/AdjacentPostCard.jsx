@@ -6,8 +6,8 @@ const AdjacentPostCard = ({ post, position }) => (
 
     <>
         <div
-            className="absolute inline-block w-full h-72 bg-center bg-no-repeat bg-cover shadow-md rounded-lg"
             style={{ backgroundImage: `url('${post.featuredImage.url}')` }}
+            className="absolute inline-block w-full h-72 bg-center bg-no-repeat bg-cover shadow-md rounded-lg"
         />
 
         <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
@@ -39,7 +39,7 @@ const AdjacentPostCard = ({ post, position }) => (
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-white w-full"
+                        className="h-6 w-full text-white"
                     >
                         <path
                             strokeWidth="2"
@@ -62,7 +62,7 @@ const AdjacentPostCard = ({ post, position }) => (
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-white w-full"
+                        className="h-6 w-full text-white"
                     >
                         <path
                             strokeWidth="2"

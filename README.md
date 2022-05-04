@@ -49,10 +49,8 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 |10| get`ServerSide`Props() ==> `SSR` ( fetching data at `each user request` )  |
 
 
-Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)
-
-
 ```jsx
+// but for deployment its not necessary 
 // jsconfig.json File
 
 {
@@ -61,3 +59,5 @@ Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)
     }
 }
 ```
+
+Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)

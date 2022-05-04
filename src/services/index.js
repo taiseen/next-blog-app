@@ -91,9 +91,9 @@ export const getSimilarPosts = async (slug, categories) => {
 
   // 🟩 ==> what do we want to fetch from this query...?
   const query = gql`
-    query GetPostDetails($slug: String!, $categories: [String!]) {
+    query GetPostDetails( $slug: String!, $categories: [String!] ) {
       posts(
-        where: {slug_not: $slug, AND: { categories_some: {slug_in: $categories} }}
+        where: { slug_not: $slug, AND: { categories_some: { slug_in: $categories} } }
         last: 3
       ) {
         title
@@ -148,8 +148,8 @@ export const getPostDetails = async (slug) => {
 
   // 🟩 ==> what do we want to fetch from this query...?
   const query = gql`
-    query GetPostDetails($slug : String!) {
-      post(where: {slug: $slug}) {
+    query GetPostDetails( $slug: String! ) {
+      post( where: { slug: $slug } ) {
         title
         excerpt
         featuredImage {
@@ -181,6 +181,46 @@ export const getPostDetails = async (slug) => {
   // 🟩 after fetching data from GraphQL, send it to FrontEnd...
   return result.post;
 };
+
+
+
+// 6) ✅ creat POST function for ==> Submit Comment
+// this function call from 🟨../components/CommentsForm.js🟨 <Component />
+export const submitComment = async (obj) => {
+
+  // backEnd api endpoint...
+  const result = await fetch('/api/comments', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(obj)
+  });
+
+  return result.json();
+};
+
+
+// 4) ✅ creat a query for ==> Get Comments...
+// this function call from 🟨../components/Comments.js🟨 <Component />
+export const getComments = async (slug) => {
+
+  const query = gql`
+    query GetComments( $slug: String! ) {
+      comments( where: { post: { slug: $slug } } ) {
+        name
+        createdAt
+        comment
+      }
+    }
+  `;
+
+  // 🟩 ==> from where we want to fetch this query...?
+  const result = await request(graphqlAPI, query, { slug });
+
+  // 🟩 after fetching data from GraphQL, send it to FrontEnd..
+  return result.comments;
+};
+
+
 
 
 
@@ -218,7 +258,6 @@ export const getAdjacentPosts = async (createdAt, slug) => {
 
   return { next: result.next[0], previous: result.previous[0] };
 };
-
 
 export const getCategoryPost = async (slug) => {
   const query = gql`
@@ -280,38 +319,4 @@ export const getFeaturedPosts = async () => {
   const result = await request(graphqlAPI, query);
 
   return result.posts;
-};
-
-
-
-// 000) ✅ creat POST function for ==> Submit Comment
-// this function call from 🟨../components/CommentsForm.js🟨 <Component />
-export const submitComment = async (obj) => {
-
-  // backEnd api endpoint...
-  const result = await fetch('/api/comments', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(obj)
-  });
-
-  return result.json();
-};
-
-
-export const getComments = async (slug) => {
-
-  const query = gql`
-    query GetComments($slug:String!) {
-      comments(where: {post: {slug:$slug}}){
-        name
-        createdAt
-        comment
-      }
-    }
-  `;
-
-  const result = await request(graphqlAPI, query, { slug });
-
-  return result.comments;
 };

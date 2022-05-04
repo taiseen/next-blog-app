@@ -24,7 +24,7 @@ const PostWidget = ({ categories, slug }) => {
       // for Home page display | recent posts...
       getRecentPosts().then(posts => setRelatedPosts(posts));
     }
-  }, [slug]);
+  }, [categories , slug]);
   // when "slug" change re-run this <Component /> again
 
 
