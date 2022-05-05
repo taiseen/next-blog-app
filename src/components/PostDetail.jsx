@@ -77,11 +77,11 @@ const PostDetail = ({ post }) => {
                             <img
                                 width="30px"
                                 height="30px"
-                                alt={author.name}
-                                src={author.photo.url}
+                                alt={author?.name}
+                                src={author?.photo.url}
                                 className="align-middle rounded-full"
                             />
-                            <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">{author.name}</p>
+                            <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">{author?.name || 'anonymous '}</p>
                         </div>
 
 

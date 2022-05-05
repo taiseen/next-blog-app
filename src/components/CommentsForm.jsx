@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { submitComment } from '../services';
 
-// this component call from 🟨 ../pages/post/[slug],js 🟨 <Component />
+
+// this component call from 🟨 ../pages/post/[slug].js 🟨 <Component />
 const CommentsForm = ({ slug }) => {
 
   const [error, setError] = useState(false);

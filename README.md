@@ -1,6 +1,6 @@
 30 - Apr - 2022
 
-## Blog App | [Live Link](www)
+## Blog App | [Live Link](https://blogs-demo.vercel.app)
 
 # Next Js + Tailwind CSS + [GraphQL CMS](https://app.graphcms.com)
 

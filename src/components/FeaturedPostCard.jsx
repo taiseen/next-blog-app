@@ -4,6 +4,7 @@ import moment from 'moment';
 import React from 'react';
 
 
+// this component call from 🟨 ../sections/FeaturedPosts.js 🟨 <Component />
 const FeaturedPostCard = ({ post }) => (
 
     <div className="relative h-72">
@@ -29,12 +30,12 @@ const FeaturedPostCard = ({ post }) => (
                     unoptimized
                     width="30px"
                     height="30px"
-                    alt={post.author.name}
-                    src={post.author.photo.url}
+                    alt={post?.author?.name}
+                    src={post?.author?.photo?.url}
                     className="align-middle drop-shadow-lg rounded-full"
                 />
                 <p className="inline align-middle text-white text-shadow ml-2 font-medium">
-                    {post.author.name}
+                    {post?.author?.name}
                 </p>
             </div>
         </div>
