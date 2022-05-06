@@ -55,9 +55,9 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 |No| `<Component/>` List   | Location                     |  GraphQL Query Function   |
 |--|-----------------------|------------------------------|---------------------------|
 | 1| index.js              | getStatic`Props()`           | getPosts( )               | 
-| 2| /post/`[slug]`.js     | getStatic`Props({ params })` | getPostDetails(`slug`)    |
+| 2| /post/`[slug]`.js     | getStatic Props({`params`})  | getPostDetails(`slug`)    |
 | 3| /post/`[slug]`.js     | getStatic`Paths()`           | getPosts( )               | 
-| 4| /category/`[slug]`.js | getStatic`Props({ params })` | getCategoryPost(`slug`)   | 
+| 4| /category/`[slug]`.js | getStatic Props({`params`})  | getCategoryPost(`slug`)   | 
 | 5| /category/`[slug]`.js | getStatic`Paths()`           | getCategories( )          | 
 | 6| Header                | `useEffect`                  | getCategories( )          | 
 | 7| Categories            | `useEffect`                  | getCategories( )          | 
@@ -66,7 +66,12 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 |10| Comments              | `useEffect`                  | getComments(`slug`)       | 
 |11| PostWidget            | `useEffect`                  | getSimilarPosts(`slug`, `categories`) + getRecentPosts( ) |
 
-
 <br/>
+
+Background Resource : https://www.svgbackgrounds.com
+
+
+# Blog App | Demo 
+<img src='https://i.ibb.co/g7DGgmc/Blog-App.jpg' />
 
 Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)

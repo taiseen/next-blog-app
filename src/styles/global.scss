@@ -11,26 +11,28 @@
 
 html,
 body {
-    padding    : 0;
-    margin     : 0;
-    font-family: 'Montserrat', sans-serif;
+    padding              : 0;
+    margin               : 0;
+    font-family          : 'Montserrat', sans-serif;
+    background-attachment: fixed;
+    background-image     : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(360,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%230245E2'/%3E%3Cstop offset='1' stop-color='%23100272'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='25' height='25' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='12.5' cy='12.5' r='12.5'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.06'/%3E%3C/svg%3E");
 
-    &:before {
-        content            : '';
-        content            : "";
-        width              : 100%;
-        min-height         : 100vh;
-        //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
-        // background: #D3D3D3;
-        background-image   : url("../../public/bg.jpg");
-        position           : fixed;
-        left               : 0;
-        top                : 0;
-        z-index            : -1;
-        background-position: 50% 50%;
-        background-repeat  : no-repeat;
-        background-size    : cover;
-    }
+    // &:before {
+    //     content            : '';
+    //     content            : "";
+    //     width              : 100%;
+    //     min-height         : 100vh;
+    //     //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
+    //     // background: #D3D3D3;
+    //     background-image   : url("../../public/bg.jpg");
+    //     position           : fixed;
+    //     left               : 0;
+    //     top                : 0;
+    //     z-index            : -1;
+    //     background-position: 50% 50%;
+    //     background-repeat  : no-repeat;
+    //     background-size    : cover;
+    // }
 }
 
 .text-shadow {
