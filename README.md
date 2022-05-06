@@ -32,7 +32,7 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 
 <br/>
 
-# Learning Context From This Project:
+# Learning context by building this project:
 |No| Context learn by doing this project...                    | 
 |--|-----------------------------------------------------------|
 | 1| Dynamic Routing                                           | 
@@ -42,22 +42,31 @@ For creating `Model's` & their corresponding `Data Field's` go to https://app.gr
 | 5| Tailwind CSS + SASS                                       | 
 | 7| Data fetching from `GraphQL`                              | 
 | 8| `GraphQL Query` writing pattern                           | 
-| 9| `GraphQL Query` with function (parameter) writing pattern | 
+| 9| `GraphQL Query` with function ( `parameter` ) writing pattern | 
 |10| TailwindCSS class applying - based on `if/else` condition | 
+|11| 1 `<Component/>` call from 2 different place - `without` props + `with` props| 
 |10| get`Static`Paths() ==> `SSG` ( statically `pre-render all the paths` )     | 
 |10| get`Static`Props() ==> `SSG` ( `pre-render` fetching data at `build time` )| 
 |10| get`ServerSide`Props() ==> `SSR` ( fetching data at `each user request` )  |
 
+<br/>
 
-```jsx
-// but for deployment its not necessary 
-// jsconfig.json File
+## GraphQL Query Called by `<Component/>`'s... || Query Mapping by `<Component/>`'s...
+|No| `<Component/>` List            | Location                            |  GraphQL Query Function   |
+|--|--------------------------------|-------------------------------------|---------------------------|
+| 1| `/pages` index.js              | inside getStatic`Props()`           | getPosts( )               | 
+| 2| `/pages` /post/`[slug]`.js     | inside getStatic`Props({ params })` | getPostDetails(`slug`)    |
+| 3| `/pages` /post/`[slug]`.js     | inside getStatic`Paths()`           | getPosts( )               | 
+| 4| `/pages` /category/`[slug]`.js | inside getStatic`Props({ params })` | getCategoryPost(`slug`)   | 
+| 5| `/pages` /category/`[slug]`.js | inside getStatic`Paths()`           | getCategories( )          | 
+| 6| `<Component/>` Header          | inside `useEffect`                  | getCategories( )          | 
+| 7| `<Component/>` Categories      | inside `useEffect`                  | getCategories( )          | 
+| 8| `<Component/>` AdjacentPosts   | inside `useEffect`                  | getAdjacentPosts(`createdAt`, `slug`) | 
+| 9| `<Component/>` FeaturedPosts   | inside `useEffect`                  | getFeaturedPosts( )       | 
+|10| `<Component/>` Comments        | inside `useEffect`                  | getComments(`slug`)       | 
+|11| `<Component/>` PostWidget      | inside `useEffect`                  | getSimilarPosts(`slug`, `categories`) + getRecentPosts( ) |
 
-{
-    "compilerOptions": {
-        "baseUrl": "src"
-    }
-}
-```
+
+<br/>
 
 Learning by inspired from[.](https://youtu.be/HYv55DhgTuA)

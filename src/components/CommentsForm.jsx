@@ -70,9 +70,8 @@ const CommentsForm = ({ slug }) => {
     const { name, email, comment, storeData } = formData;
 
     if (!name || !email || !comment) {
-      setError(true);
-      return;
-      // ❌ stop this function ❌ execution from here... ❌
+      setError(true); // show to user an ERROR message by JSX...
+      return; // ❌ stop this function ❌ execution from here... ❌
     }
 
     // creating comment object...

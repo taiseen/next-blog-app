@@ -18,9 +18,15 @@ export default function Home({ posts }) {
         <link rel="icon" href="/blog.ico" />
       </Head>
 
+
+      {/* 🟨🟨🟨 UI For ==> scrolling post at the top... */}
       <FeaturedPosts />
 
+
+      {/* 🟨🟨🟨 UI For ==> main holder... */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+        {/* 🟨🟨🟨 UI For ==> all new post... */}
         <div className="col-span-1 lg:col-span-8">
           {
             posts?.map((post, i) =>
@@ -30,6 +36,8 @@ export default function Home({ posts }) {
           }
         </div>
 
+
+        {/* 🟨🟨🟨 UI For ==> side panel for category post's... */}
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
             <PostWidget />
@@ -38,6 +46,7 @@ export default function Home({ posts }) {
         </div>
 
       </div>
+      
     </div>
 
   )

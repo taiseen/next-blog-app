@@ -2,6 +2,7 @@ import { AdjacentPostCard } from '../components';
 import { getAdjacentPosts } from '../services';
 import { useState, useEffect } from 'react';
 
+
 // this component call from 🟨 ../pages/post/[slug],js 🟨 <Component />
 const AdjacentPosts = ({ createdAt, slug }) => {
 
@@ -11,11 +12,12 @@ const AdjacentPosts = ({ createdAt, slug }) => {
 
     useEffect(() => {
         getAdjacentPosts(createdAt, slug)
-            .then((result) => {
+            .then(result => {
                 setAdjacentPost(result);
                 setDataLoaded(true);
             });
     }, [slug]);
+
 
 
     return (

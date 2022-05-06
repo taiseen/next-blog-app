@@ -29,10 +29,11 @@ const Header = () => {
                     </Link>
                 </div>
 
-                {/* only from medium device ==> display this div */}
+                {/* only from medium device ==> display this div || in small device its hide */}
                 {/* create a phantom container by ==> contents */}
                 <div className="hidden md:float-right md:contents">
                     {
+                        // pint all category at UI that fetch from GraphQL...
                         categories.map((category, index) => (
                             <Link
                                 passHref

@@ -185,11 +185,11 @@ export const getPostDetails = async (slug) => {
 
 
 
-// 6) ✅ creat POST function for ==> Submit Comment
+// 6) ✅ creat POST function for ==> Submit Comment | this function send data into GraphQL
 // this function call from 🟨../components/CommentsForm.js🟨 <Component />
 export const submitComment = async (obj) => {
 
-  // backEnd api endpoint...
+  // HTTP request to our own BackEnd api endpoint... 
   const result = await fetch('/api/comments', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -200,7 +200,7 @@ export const submitComment = async (obj) => {
 };
 
 
-// 4) ✅ creat a query for ==> Get Comments...
+// 7) ✅ creat a query for ==> Get Comments...
 // this function call from 🟨../components/Comments.js🟨 <Component />
 export const getComments = async (slug) => {
 
@@ -223,35 +223,7 @@ export const getComments = async (slug) => {
 
 
 
-// this function call from 🟨../sections/FeaturedPosts.js🟨 <Component />
-export const getFeaturedPosts = async () => {
-
-  const query = gql`
-    query GetCategoryPost( ) {
-      posts( where: { featuredPost: true } ) {
-        author {
-          name
-          photo {
-            url
-          }
-        }
-        featuredImage {
-          url
-        }
-        title
-        slug
-        createdAt
-      }
-    }   
-  `;
-
-  const result = await request(graphqlAPI, query);
-
-  return result.posts;
-};
-
-
-
+// 8) ✅ creat a query for ==> Category Post...
 // this function call from 🟨../page/category/[slug].js🟨 <Component />
 export const getCategoryPost = async (slug) => {
 
@@ -292,6 +264,38 @@ export const getCategoryPost = async (slug) => {
 };
 
 
+
+// 9) ✅ creat a query for ==> Featured Posts...
+// this function call from 🟨../sections/FeaturedPosts.js🟨 <Component />
+export const getFeaturedPosts = async () => {
+
+  const query = gql`
+    query GetCategoryPost( ) {
+      posts( where: { featuredPost: true } ) {
+        author {
+          name
+          photo {
+            url
+          }
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }   
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.posts;
+};
+
+
+// 10) ✅ creat a query for ==> Adjacent Posts...
+// this function call from 🟨../sections/AdjacentPosts.js🟨 <Component />
 export const getAdjacentPosts = async (createdAt, slug) => {
   const query = gql`
     query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {

@@ -6,7 +6,8 @@ import Link from 'next/link';
 import moment from 'moment';
 
 
-// this component call from 🟨index.js🟨 <Component />
+// this component call from 🟨 ../pages/index.js 🟨 <Component />
+// this component call from 🟨 ../pages/post/[slug].js 🟨 <Component />
 const PostWidget = ({ categories, slug }) => {
 
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -15,6 +16,7 @@ const PostWidget = ({ categories, slug }) => {
   // fetch data from GraphQL inside this useEffect
   // by the help of if() condition...
   useEffect(() => {
+    // slug ==> is the specific path of an article...
     if (slug) {
       // for already Opening post, to display | related other posts...
       // is it a similar post??? know it by "category"
@@ -24,7 +26,7 @@ const PostWidget = ({ categories, slug }) => {
       // for Home page display | recent posts...
       getRecentPosts().then(posts => setRelatedPosts(posts));
     }
-  }, [categories , slug]);
+  }, [categories, slug]);
   // when "slug" change re-run this <Component /> again
 
 
@@ -32,7 +34,11 @@ const PostWidget = ({ categories, slug }) => {
     <div className="p-4 pb-12 mb-8 bg-white shadow-lg rounded-lg">
 
       <h3 className="pb-4 mb-8 text-xl font-semibold border-b">
-        {slug ? 'Related Posts' : 'Recent Posts'}
+        {
+          slug
+            ? 'Related Posts'
+            : 'Recent Posts'
+        }
       </h3>
 
       {

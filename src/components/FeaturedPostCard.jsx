@@ -4,6 +4,7 @@ import moment from 'moment';
 import React from 'react';
 
 
+// this component display at the TOP scrolling bar article 
 // this component call from 🟨 ../sections/FeaturedPosts.js 🟨 <Component />
 const FeaturedPostCard = ({ post }) => (
 
@@ -15,7 +16,7 @@ const FeaturedPostCard = ({ post }) => (
         <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
 
 
-        <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
+        <div className="absolute w-full h-full p-4 rounded-lg flex flex-col items-center justify-center">
 
             <p className="text-white mb-4 text-shadow font-semibold text-xs">
                 {moment(post.createdAt).format('MMM DD, YYYY')}
@@ -25,7 +26,7 @@ const FeaturedPostCard = ({ post }) => (
                 {post.title}
             </p>
 
-            <div className="flex items-center absolute bottom-5 w-full justify-center">
+            <div className="flex items-center justify-center absolute w-full bottom-5">
                 <Image
                     unoptimized
                     width="30px"
@@ -40,6 +41,10 @@ const FeaturedPostCard = ({ post }) => (
             </div>
         </div>
 
+        {
+            // Link for going to at ==> 🟨../pages/post/[slug].js🟨 <Component />
+            // for details viewing about this post...
+        }
         <Link href={`/post/${post.slug}`} passHref>
             <span className="cursor-pointer absolute w-full h-full" />
         </Link>

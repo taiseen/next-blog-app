@@ -3,7 +3,8 @@ import { getCategories } from '../services';
 import Link from 'next/link';
 
 
-// this component call from 🟨index.js🟨 <Component />
+// this component call from 🟨 ../pages/index.js 🟨 <Component />
+// this component call from 🟨 ../pages/post/[slug].js 🟨 <Component />
 const Categories = () => {
 
   const [categories, setCategories] = useState([]);
